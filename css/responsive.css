@@ -1,0 +1,221 @@
+/* ============================================
+   SOFTZILAA - Responsive Stylesheet
+   ============================================ */
+
+/* ============================================
+   LARGE DESKTOPS (1440px+)
+   ============================================ */
+@media (min-width: 1440px) {
+  :root { --container-max: 1360px; }
+  .hero-title { font-size: 6rem; }
+}
+
+/* ============================================
+   DESKTOPS (1280px and below)
+   ============================================ */
+@media (max-width: 1280px) {
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; }
+  .about-preview { gap: 50px; }
+}
+
+/* ============================================
+   LAPTOPS (1024px and below)
+   ============================================ */
+@media (max-width: 1024px) {
+  :root { --section-pad: 80px 0; }
+
+  /* Nav */
+  .navbar-nav { display: none; }
+  .nav-whatsapp { display: none; }
+  .hamburger { display: flex; }
+  .navbar-btns .btn { display: none; }
+
+  /* Hero */
+  .hero-title { font-size: clamp(2.2rem, 6vw, 4.5rem); }
+
+  /* Grids */
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .stat-card:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.05); }
+  .stat-card:nth-last-child(-n+2) { border-bottom: none; }
+
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .portfolio-grid-preview { grid-template-columns: repeat(2, 1fr); }
+  .portfolio-full-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-full-grid { grid-template-columns: repeat(2, 1fr); }
+  .clients-logo-grid { grid-template-columns: repeat(3, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* About */
+  .about-preview { grid-template-columns: 1fr; gap: 40px; }
+  .about-image-wrapper { max-width: 500px; margin: 0 auto; }
+
+  /* Services */
+  .service-features { grid-template-columns: 1fr; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+
+  /* Mission Vision */
+  .mission-vision-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+/* ============================================
+   TABLETS (768px and below)
+   ============================================ */
+@media (max-width: 768px) {
+  :root { --section-pad: 60px 0; }
+
+  /* Typography */
+  .section-title { font-size: 1.8rem; }
+  .hero-title { font-size: 2.2rem; }
+
+  /* Container */
+  .container { padding: 0 20px; }
+
+  /* Nav */
+  .logo-tagline { display: none; }
+
+  /* Hero */
+  .hero-cta { flex-direction: column; align-items: center; }
+  .hero-cta .btn { width: 100%; max-width: 280px; }
+
+  /* Stats */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Portfolio */
+  .portfolio-grid-preview { grid-template-columns: 1fr; }
+  .portfolio-full-grid { grid-template-columns: 1fr; }
+
+  /* Testimonials */
+  .testimonials-full-grid { grid-template-columns: 1fr; }
+
+  /* Clients */
+  .clients-logo-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Features */
+  .features-grid { grid-template-columns: 1fr; }
+
+  /* Services */
+  .services-grid { grid-template-columns: 1fr; }
+
+  /* Team */
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Contact */
+  .form-row { grid-template-columns: 1fr; }
+
+  /* CTA banner */
+  .cta-banner { padding: 50px 28px; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+  .footer-brand { grid-column: auto; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  /* Section header */
+  .section-header { margin-bottom: 40px; }
+
+  /* Page header */
+  .page-header { padding: 130px 0 60px; }
+  .page-header h1 { font-size: 2rem; }
+
+  /* About preview */
+  .about-image-badge { right: 0; bottom: -10px; padding: 16px 20px; }
+
+  /* Grid 2 becomes 1 */
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============================================
+   MOBILE (480px and below)
+   ============================================ */
+@media (max-width: 480px) {
+  /* Typography */
+  .section-title { font-size: 1.6rem; }
+  .hero-title { font-size: 1.9rem; }
+
+  /* Stat cards */
+  .stats-grid { grid-template-columns: 1fr; }
+  .stat-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .stat-card:last-child { border-bottom: none; }
+
+  /* Team */
+  .team-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Clients */
+  .clients-logo-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Grid 4 becomes 1 */
+  .grid-4 { grid-template-columns: 1fr; }
+
+  /* Error page */
+  .error-code { font-size: 7rem; }
+
+  /* Buttons */
+  .btn { padding: 12px 24px; font-size: 0.72rem; }
+  .btn-lg { padding: 14px 28px; font-size: 0.75rem; }
+
+  /* Service features grid */
+  .service-features { grid-template-columns: 1fr; }
+
+  /* CTA Banner */
+  .cta-banner { padding: 40px 20px; }
+  .cta-banner .cta-btns { flex-direction: column; align-items: center; }
+  .cta-banner .cta-btns .btn { width: 100%; max-width: 260px; }
+
+  /* Portfolio filters */
+  .portfolio-filters { gap: 8px; }
+  .filter-btn { padding: 8px 16px; font-size: 0.72rem; }
+
+  /* Contact form card */
+  .contact-form-card { padding: 28px 20px; }
+
+  /* Mobile menu nav links */
+  .mobile-nav-link { font-size: 1.1rem; }
+
+  /* Back to top and whatsapp */
+  #backToTop, .whatsapp-float { right: 16px; }
+  .whatsapp-float { bottom: 80px; }
+  #backToTop { bottom: 24px; }
+
+  /* scroll indicator */
+  .hero-scroll { display: none; }
+}
+
+/* ============================================
+   VERY SMALL DEVICES (360px and below)
+   ============================================ */
+@media (max-width: 360px) {
+  .hero-title { font-size: 1.6rem; }
+  .container { padding: 0 16px; }
+  .team-grid { grid-template-columns: 1fr; }
+  .clients-logo-grid { grid-template-columns: 1fr 1fr; }
+
+  .navbar-logo .logo-name { font-size: 1rem; }
+  .logo-icon { width: 36px; height: 36px; }
+}
+
+/* ============================================
+   PRINT
+   ============================================ */
+@media print {
+  .navbar,
+  .footer,
+  #backToTop,
+  .whatsapp-float,
+  .hamburger,
+  .mobile-menu,
+  .scroll-top-btn,
+  .hero-scroll {
+    display: none !important;
+  }
+  body { background: white; color: black; }
+}

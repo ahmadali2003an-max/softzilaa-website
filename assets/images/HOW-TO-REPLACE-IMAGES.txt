@@ -1,0 +1,122 @@
+============================================================
+  SOFTZILAA WEBSITE — IMAGE REPLACEMENT GUIDE
+  By: SoftZilaa Team
+============================================================
+
+Neeche diye gaye folders mein apni images replace karein.
+Bas same filename rakhein — sirf file ka content replace karein.
+
+------------------------------------------------------------
+📁 FOLDER STRUCTURE
+------------------------------------------------------------
+
+assets/
+└── images/
+    ├── logo.svg          ← Aapka LOGO (navbar + footer)
+    ├── about-office.svg  ← About page main image (office/team photo)
+    ├── about-team.svg    ← Backup about image
+    │
+    ├── portfolio/        ← Project screenshots (12 files)
+    │   ├── project-ecommerce.svg
+    │   ├── project-branding-novatech.svg
+    │   ├── project-foodiehub.svg
+    │   ├── project-medicare.svg
+    │   ├── project-autoelite-video.svg
+    │   ├── project-greenlife-seo.svg
+    │   ├── project-edubridge.svg
+    │   ├── project-luxurybrands.svg
+    │   ├── project-nestrealty.svg
+    │   ├── project-consultpro.svg
+    │   ├── project-retailmax.svg
+    │   └── project-automatehub.svg
+    │
+    ├── team/             ← Team member photos (8 files)
+    │   ├── ceo.svg
+    │   ├── designer.svg
+    │   ├── developer.svg
+    │   ├── marketing.svg
+    │   ├── ai-lead.svg
+    │   ├── brand.svg
+    │   ├── video.svg
+    │   └── content.svg
+    │
+    └── clients/          ← Client logos (16 files)
+        ├── techvision.svg
+        ├── retailmax.svg
+        ├── medicare.svg
+        ├── edubridge.svg
+        ├── foodiehub.svg
+        ├── nestrealty.svg
+        ├── autoelite.svg
+        ├── consultpro.svg
+        ├── greenlife.svg
+        ├── luxurybrands.svg
+        ├── automatehub.svg
+        ├── travelease.svg
+        ├── fitnation.svg
+        ├── soundwave.svg
+        ├── urbanthreads.svg
+        └── finedge.svg
+
+------------------------------------------------------------
+✅ IMAGE REPLACE KARNE KA TARIKA
+------------------------------------------------------------
+
+STEP 1: Apni image teyar karein
+  - Recommended formats: JPG, PNG, WebP, SVG
+  - Logo ke liye: PNG with transparent background (200x60px)
+  - Portfolio images: 800x500px ya 16:9 ratio
+  - Team photos: 400x400px (square/circle crop)
+  - Client logos: 200x80px (transparent background)
+
+STEP 2: File rename karein
+  - Apni image file ko same naam dein jis SVG ko replace karna hai
+  - Example: apni company logo ko "logo.png" naam dein
+
+STEP 3: Old file replace karein
+  - Purani .svg file delete karein
+  - Apni nayi image file wahan paste karein
+
+STEP 4: HTML mein path update karein (agar different format)
+  - Agar aap .jpg ya .png use kar rahe hain, to HTML mein src update karein
+  - Example: src="/assets/images/logo.svg" → src="/assets/images/logo.png"
+
+------------------------------------------------------------
+🔍 KONSE FILE MEIN KAHAN EDIT KAREIN
+------------------------------------------------------------
+
+  LOGO:
+  → includes/header.html  (line 7)
+  → includes/footer.html  (line 10)
+
+  ABOUT IMAGE:
+  → about.html  (about-office.svg section)
+
+  PORTFOLIO IMAGES:
+  → portfolio.html  (12 .pf-img sections)
+
+  TEAM PHOTOS:
+  → about.html  (team-grid section)
+
+  CLIENT LOGOS:
+  → clients.html  (clients-logo-grid section)
+
+------------------------------------------------------------
+💡 TIPS
+------------------------------------------------------------
+
+  1. Logo transparent PNG recommended hai (background na ho)
+  2. Portfolio images zyada acha dikhengi agar same size rakhein
+  3. Team photos square (1:1) recommended hain
+  4. Client logos white ya light color mein best dikhte hain
+     (dark background pe)
+  5. WebP format use karein zyada fast loading ke liye
+
+------------------------------------------------------------
+📞 HELP CHAHIYE? CONTACT KARO
+------------------------------------------------------------
+
+  WhatsApp: +92 341 4498408
+  Email: softzilaaofficial@gmail.com
+
+============================================================

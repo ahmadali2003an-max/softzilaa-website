@@ -1,0 +1,367 @@
+/* ============================================
+   SOFTZILAA - Animations
+   ============================================ */
+
+/* ============================================
+   KEYFRAMES
+   ============================================ */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float-particle {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(var(--dx, 40px)); opacity: 0; }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(255,0,0,0.3), 0 0 20px rgba(255,0,0,0.1); }
+  50% { box-shadow: 0 0 25px rgba(255,0,0,0.6), 0 0 50px rgba(255,0,0,0.2); }
+}
+
+@keyframes glow-text-pulse {
+  0%, 100% { text-shadow: 0 0 10px rgba(255,0,0,0.4), 0 0 20px rgba(255,0,0,0.15); }
+  50% { text-shadow: 0 0 20px rgba(255,0,0,0.8), 0 0 40px rgba(255,0,0,0.3); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoom-in-fade {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3); }
+  50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6), 0 0 60px rgba(37, 211, 102, 0.15); }
+}
+
+@keyframes scan-line {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 22%, 24%, 55% { opacity: 0.7; }
+}
+
+@keyframes border-glow {
+  0%, 100% { border-color: rgba(255,0,0,0.15); }
+  50% { border-color: rgba(255,0,0,0.5); }
+}
+
+@keyframes bg-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================================
+   HERO ANIMATIONS
+   ============================================ */
+
+.hero-tag {
+  animation: slide-in-up 0.8s ease both;
+  animation-delay: 0.1s;
+}
+
+.hero-title {
+  animation: slide-in-up 0.8s ease both;
+  animation-delay: 0.25s;
+}
+
+.hero-subtitle {
+  animation: slide-in-up 0.8s ease both;
+  animation-delay: 0.4s;
+}
+
+.hero-cta {
+  animation: slide-in-up 0.8s ease both;
+  animation-delay: 0.55s;
+}
+
+/* ============================================
+   GLOW BUTTON EFFECTS
+   ============================================ */
+
+.btn-primary {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.btn-primary:hover {
+  animation: none;
+}
+
+/* ============================================
+   NAVBAR HOVER EFFECTS
+   ============================================ */
+
+.nav-link::after {
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   CARD HOVER TILT (JS handles the 3D effect)
+   ============================================ */
+
+.tilt-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.1s ease-out;
+}
+
+/* ============================================
+   LOADING SPINNER
+   ============================================ */
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255,0,0,0.1);
+  border-top-color: var(--red);
+  border-radius: 50%;
+  animation: rotate-slow 0.8s linear infinite;
+}
+
+/* ============================================
+   PAGE TRANSITION OVERLAY
+   ============================================ */
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.page-transition.active {
+  pointer-events: all;
+  opacity: 1;
+}
+
+/* ============================================
+   SCAN LINE EFFECT (on hover elements)
+   ============================================ */
+
+.scan-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-effect::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(255,0,0,0.5), transparent);
+  top: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.scan-effect:hover::after {
+  opacity: 1;
+  animation: scan-line 1s linear infinite;
+}
+
+/* ============================================
+   STAGGER ANIMATION DELAYS
+   ============================================ */
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* ============================================
+   PARTICLE STYLES
+   ============================================ */
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float-particle linear infinite;
+}
+
+/* ============================================
+   ANIMATED UNDERLINE NAV
+   ============================================ */
+
+.animated-link {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--red);
+  box-shadow: 0 0 8px rgba(255,0,0,0.6);
+  transition: width 0.3s ease;
+}
+
+.animated-link:hover::after,
+.animated-link.active::after {
+  width: 100%;
+}
+
+/* ============================================
+   COUNTER ANIMATION
+   ============================================ */
+
+.counter-num {
+  transition: all 0.3s ease;
+}
+
+/* ============================================
+   REVEAL ON SCROLL
+   ============================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================================
+   NEON GLOW ON HOVER
+   ============================================ */
+
+.neon-hover {
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.neon-hover:hover {
+  color: var(--red);
+  text-shadow: 0 0 10px rgba(255,0,0,0.8), 0 0 20px rgba(255,0,0,0.4);
+  animation: glow-text-pulse 1.5s ease-in-out infinite;
+}
+
+/* ============================================
+   HERO BACKGROUND ANIMATED ORBS
+   ============================================ */
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: float-orb 8s ease-in-out infinite;
+}
+
+.hero-orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,0,0,0.08), transparent 70%);
+  top: -100px;
+  left: -100px;
+  animation-delay: 0s;
+}
+
+.hero-orb-2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(192,0,0,0.05), transparent 70%);
+  bottom: 0;
+  right: 0;
+  animation-delay: -4s;
+}
+
+@keyframes float-orb {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(30px, -20px); }
+  66% { transform: translate(-20px, 15px); }
+}
+
+/* ============================================
+   SKELETON LOADING
+   ============================================ */
+
+.skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
