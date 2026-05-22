@@ -9,7 +9,7 @@
   /* Detect base path from current page URL */
   function getBasePath() {
     const base = document.querySelector('meta[name="base-path"]');
-    return base ? base.getAttribute('content') : 'softzilaa-website/';
+    return base ? base.getAttribute('content') : '/softzilaa-website/';
   }
 
   const BASE = getBasePath();
